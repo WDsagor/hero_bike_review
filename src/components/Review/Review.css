@@ -1,0 +1,7 @@
+.comment-area{
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    justify-content: space-evenly;
+}
