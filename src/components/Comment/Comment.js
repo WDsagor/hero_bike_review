@@ -7,7 +7,7 @@ const Comment = (props) => {
     const {comment, date } = comments
     return (
         <div className='comment-details'>
-            <h4>{name}</h4>
+            <h4>By : {name}</h4>
             <p>{comment}</p>
             <small><b>Comment date: </b> {date}</small>
 
