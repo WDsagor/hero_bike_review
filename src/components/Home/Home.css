@@ -16,7 +16,8 @@
     text-align: justify;
 }
 
-.products-details .btn {
+.products-details .btn,
+.customer-reviews .btn {
     padding: 10px 20px;
     border: none;
     background-color: brown;
@@ -26,9 +27,17 @@
     margin-top: 20px;
 }
 
-.products-details .btn:hover {
+.products-details .btn:hover,
+.customer-reviews .btn:hover {
     background-color: rgb(102, 21, 21);
     cursor: pointer;
+}
+.commtes-area{
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    gap: 20px;
+    justify-content: space-evenly;
 }
 
 @media (max-width:991px) {

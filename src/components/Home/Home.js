@@ -1,8 +1,13 @@
 import React from "react";
 import pulser from "../../Asset/img/pulser160.png";
+import useReview from "../../hooks/useReview";
+import Comment from "../Comment/Comment";
 import "./Home.css";
 
 const Home = () => {
+  const [reviews, setReviews] = useReview();
+  const threeComments = reviews.splice(0, 3)
+  console.log(threeComments);
   return (
     <div className="container">
       <div className="product-item">
@@ -20,8 +25,17 @@ const Home = () => {
           <img src={pulser} alt="" />
         </div>
       </div>
-      <div>
-          <h1>Customer Review</h1>
+      <div className="customer-reviews">
+          <h1>Customer Review({threeComments.length})</h1>
+          <div className="commtes-area">
+            {
+              threeComments.map(comment => <Comment
+              key= {comment.id}
+              comment={comment}
+              ></Comment>)
+            }
+          </div>
+          <button className="btn"> See all reviews</button>
       </div>
     </div>
   );

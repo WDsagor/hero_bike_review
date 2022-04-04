@@ -6,7 +6,6 @@ import './Review.css'
 
 const Review = () => {
     const [reviews, setReviews] = useReview();
-    console.log(reviews);
     return (
         <div>
             <h1>Comments Area</h1>
