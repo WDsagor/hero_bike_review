@@ -12,9 +12,10 @@ const useReview = () => {
 }; 
 
 const useChartData = () => {
-    const [chartData, setChartData] = useState();
-    useEffect(() => {
-        fetch('chatData.json')
+    const [chartData, setChartData] = useState([]);
+
+    useEffect( () => {
+        fetch('chartData.json')
         .then(res => res.json())
         .then(data => setChartData(data));
     }, [])
