@@ -10,4 +10,14 @@ const useReview = () => {
     }, []);
     return [reviews, setReviews];
 }; 
-export default useReview;
+
+const useChartData = () => {
+    const [chartData, setChartData] = useState();
+    useEffect(() => {
+        fetch('chatData.json')
+        .then(res => res.json())
+        .then(data => setChartData(data));
+    }, [])
+    return [chartData, setChartData];
+};
+export {useReview, useChartData };

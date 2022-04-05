@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import pulser from "../../Asset/img/pulser160.png";
-import useReview from "../../hooks/useReview";
+import { useReview } from "../../hooks/useReview";
 import Comment from "../Comment/Comment";
 import "./Home.css";
 
 const Home = () => {
   const [reviews, setReviews] = useReview();
   const threeComments = reviews.splice(0, 3)
+  const navigate = useNavigate();
   console.log(threeComments);
   return (
     <div className="container">
@@ -35,7 +37,7 @@ const Home = () => {
               ></Comment>)
             }
           </div>
-          <button className="btn"> See all reviews</button>
+          <button onClick={()=> navigate('/review')} className="btn"> See all reviews</button>
       </div>
     </div>
   );
